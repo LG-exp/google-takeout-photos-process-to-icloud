@@ -1,5 +1,6 @@
 # Migrating from Google Photos to iCloud
 A personal guide and some powershell scripts I used.
+Use at your own risk, I do not provide any guarantees. Hopefully this helps someone.
 
 This guide outlines the process of migrating your photo library from Google Photos to iCloud using a series of PowerShell scripts, alongside other tools such as ExifTool, FFmpeg, and Google Photos EXIF tool. These scripts are designed for use with PowerShell version 7 or higher, leveraging parallel processing for efficiency.
 
@@ -25,6 +26,7 @@ Use [Czkawka](https://github.com/qarmin/czkawka), a duplicate finder tool, to id
 
 ### 5. Execute the Move Script
 With the list of duplicates prepared, run the `2-moveAlready.ps1` script to relocate listed files. This process helps in filtering out photos already present in your iPhone's local storage.
+
 
 ### 6. Convert Video Formats
 To ensure compatibility with iOS, the `3-changeCodedMP4s.ps1` script converts non-H264/AAC videos to a compatible format using FFmpeg.
