@@ -26,22 +26,28 @@ Beware this script tries to parse the metadata date as YYYY:MM:DD HH:MM:SS.
 You should use this script in both your output folder as well as your error folder. Even though Google Photos Migrate EXIF Tool placed media in an error folder, all this means is that in most cases the media didn't have a JSON file associated. Still, some or most of these photos have a valid metadate, e.g. running ExifTool on one of those I can identify having a valid date under the variables Create Date, Date/Time Original and Modify Date (sometimes there are others).
 
 
-### 4. Eliminate Duplicates
-At this step I'd connect my iPhone and use the [Czkawka](https://github.com/qarmin/czkawka) tool to identify duplicated images (images that are already in my iOS local device and thus already syncing to iCloud vs images in my output/error folders), so that I can generate a list of photos I do not wish to move into my iPhone local storage. Save the list of duplicates in a TXT file and name it: `2-filesToMove.txt`
+### 4. Eliminate Duplicates (optional)
+Use the [Czkawka](https://github.com/qarmin/czkawka) tool to identify duplicated images within the output and error folder.
 
-### 5. Execute the Move Script
+Also, connect iPhone to Windows 11 via good cable for good transfer speeds, then open the Windows Photos App, and import all media from the iPhone. This way we can use [Czkawka](https://github.com/qarmin/czkawka) tool to identify which media in output/error are already in the iPhone local storage, and thus removing or moving out of the transfer this duplicated photos.
+
+In my case I choose to non-destructive just move them out into another windows folder, for that purpose save the list of duplicates media filenames in a TXT file and name it: `2-filesToMove.txt`
+
+
+### 4.1 Execute the Move Script (optional)
 With the list of duplicates prepared, run the `2-moveAlready.ps1` script to relocate listed files into a new folder.
 
-
-### 6. Convert Video Formats
+### 5. Convert Video Formats (optional)
 To ensure compatibility with iOS, the `3-changeCodedMP4s.ps1` script converts non-H264/AAC videos to a compatible format using FFmpeg.
 
-### 7. Transfer to iPhone
+### 6. Transfer to iPhone
 Finally, zip the processed photos and videos, and transfer them to your iPhone via AirDrop or Windows shared folders (SMB) for fast transfer. Once on your iPhone, use the Files app to import the media into the Photos app. This method bypasses limitations associated with iTunes/iCloud imports, offering a more flexible way to transfer the media into iOS. 
 
 Tip: I imported in batches of 500 media at a single time as trying to do it all at once might result in the app crashing.
 
-### 8. Wait for iOS to sync new photos to iCloud
+To-do: Try using MacOs Airdrop.
+
+### 7. Wait for iOS to sync new photos to iCloud
 That's it. Now just wait for iOS to sync over night all of the new photos imported the iPhone local storage.
 
 
