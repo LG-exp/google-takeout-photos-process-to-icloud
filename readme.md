@@ -11,6 +11,12 @@ This guide outlines the process of migrating your photo library from Google Phot
 - [FFmpeg](https://ffmpeg.org/) for video format conversion
 - [Google Photos Migrate EXIF Tool](https://github.com/garzj/google-photos-migrate?tab=readme-ov-file) for restoring original photo metadata from Google Takeout
 
+## Setup
+Run `install-dependencies.ps1` to verify and install the tools above. The script checks for
+PowerShell 7, ExifTool, FFmpeg and Google Photos Migrate EXIF Tool. When a component is
+missing it tries to install it using `winget` or `choco`. If neither package manager is
+available the script prints manual installation instructions.
+
 ## Step-by-Step Guide
 
 ### 1. Download Your Google Photos Library
