@@ -1,11 +1,20 @@
-# Wait for the user to press Enter to start
-Read-Host "Press Enter to start processing files"
+# Adds a parameter so the script can be executed non-interactively
+param(
+    [string]$TargetDirectory,
+    [switch]$NoPause
+)
 
-# Define the target directory
-$targetDirectory = "C:\Users\Daniel Bañuelos\Desktop\takeout-20240305T230527Z-001\outputmp4s"
+if (-not $NoPause) {
+    Read-Host "Press Enter to start processing files"
+}
+
+# If a directory wasn't supplied use a default path or prompt the user
+if (-not $TargetDirectory) {
+    $TargetDirectory = "C:\Users\Daniel Bañuelos\Desktop\takeout-20240305T230527Z-001\outputmp4s"
+}
 
 # Get all files in the directory
-$files = Get-ChildItem $targetDirectory -File
+$files = Get-ChildItem $TargetDirectory -File
 
 # Throttle limit can be adjusted based on your system's capabilities
 $throttleLimit = 12
@@ -52,5 +61,7 @@ $files | ForEach-Object -Parallel {
     }
 } -ThrottleLimit $throttleLimit
 
-Write-Host "Processing complete. Press Enter to exit." -ForegroundColor DarkGreen
-Read-Host "Press Enter to exit"
+Write-Host "Processing complete." -ForegroundColor DarkGreen
+if (-not $NoPause) {
+    Read-Host "Press Enter to exit"
+}
