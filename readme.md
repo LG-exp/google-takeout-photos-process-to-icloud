@@ -54,3 +54,10 @@ That's it. Now just wait for iOS to sync over night all of the new photos import
 
 ## Further development
 If at some point in my life I have time I'll develop a more robust solution in a better programming language (Go, Rust, Zig... or even Python).
+
+## Running Tests
+Run all Pester tests with:
+
+```powershell
+Invoke-Pester
+```
