@@ -2,7 +2,7 @@
 Read-Host "Press Enter to start processing files"
 
 # Define the target directory
-$targetDirectory = "C:\Users\Daniel Bañuelos\Desktop\takeout-20240305T230527Z-001\3gps"
+$targetDirectory = Read-Host "Enter the full path to the directory containing your files"
 
 # Get all files in the directory
 $files = Get-ChildItem $targetDirectory -File
@@ -43,7 +43,7 @@ $files | ForEach-Object -Parallel {
         $file.CreationTime = $correctDate
 
 
-        Write-Host "F: $($file.Name) `n CD: $dateStringWithoutMilliseconds `n DTO: $dateTimeOriginal `n`n" -ForegroundColor DarkGreen
+        Write-Host "F: $($file.Name) `n CD: $dateStringWithoutMilliseconds `n`n" -ForegroundColor DarkGreen
     } else {
         Write-Host "ERROR NO VALID DATE FOUND FOR FILE: $($file.Name) `n`n" -ForegroundColor DarkRed
     }

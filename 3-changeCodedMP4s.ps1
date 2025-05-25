@@ -1,6 +1,6 @@
 ﻿# Define the source and destination directories
-$sourceDirectory = "C:\Users\Daniel Bañuelos\Desktop\takeout-20240305T230527Z-001\output"
-$destinationDirectory = "C:\Users\Daniel Bañuelos\Desktop\takeout-20240305T230527Z-001\3gps"
+$sourceDirectory = Read-Host "Enter the source directory"
+$destinationDirectory = Read-Host "Enter the destination directory"
 
 # Get all MP4 files from the source directory
 $mp4Files = Get-ChildItem $sourceDirectory -Filter *.3gp
