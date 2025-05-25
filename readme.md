@@ -23,7 +23,7 @@ We'll use the `1-correctDatesParallelA.ps1` script to harmonize date metadata ac
 
 Beware this script tries to parse the metadata date as YYYY:MM:DD HH:MM:SS.
 
-You should use this script in both your output folder as well as your error folder. Even though Google Photos Migrate EXIF Tool placed media in an error folder, all this means is that in most cases the media didn't have a JSON file associated. Still, some or most of these photos have a valid metadate, e.g. running ExifTool on one of those I can identify having a valid date under the variables Create Date, Date/Time Original and Modify Date (sometimes there are others).
+You should use this script in both your output folder as well as your error folder. Even though Google Photos Migrate EXIF Tool placed media in an error folder, all this means is that in most cases the media didn't have a JSON file associated. Still, some or most of these photos have a valid metadata, e.g. running ExifTool on one of those I can identify having a valid date under the variables Create Date, Date/Time Original and Modify Date (sometimes there are others).
 
 
 ### 4. Eliminate Duplicates (optional)
