@@ -27,7 +27,7 @@ $files | ForEach-Object -Parallel {
         }
     }
     
-    if (-not $correctDate -and $dateTimeOriginal) {
+    if (-not $correctDate) {
         $metadataDate = & $exiftoolPath -MetadataDate -s3 $file.FullName
         foreach ($format in $formats) {
             try {
