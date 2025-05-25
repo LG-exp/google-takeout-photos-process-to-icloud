@@ -1,14 +1,14 @@
 Read-Host "Press Enter to start processing files"
 
 # Define the path to your TXT file containing the filenames
-$txtFilePath = "C:\Users\Daniel Bañuelos\Desktop\takeout-20240305T230527Z-001\2-filesToMove.txt"
+$txtFilePath = Read-Host "Enter the full path to the file listing duplicates"
 
 # Define the source and destination directories
-$sourceDirectory = "C:\Users\Daniel Bañuelos\Desktop\takeout-20240305T230527Z-001\output"
-$destinationDirectory = "C:\Users\Daniel Bañuelos\Desktop\takeout-20240305T230527Z-001\alreadyiniOS\onlybyname"
+$sourceDirectory = Read-Host "Enter the source directory"
+$destinationDirectory = Read-Host "Enter the destination directory"
 
 # Define the path for the error log file
-$logFilePath = "C:\Users\Daniel Bañuelos\Desktop\takeout-20240305T230527Z-001\errorLogMoveThem.txt"
+$logFilePath = Read-Host "Enter the log file path"
 
 # Read the filenames from the TXT file
 $fileNames = Get-Content $txtFilePath

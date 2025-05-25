@@ -1,8 +1,9 @@
-# Migrating from Google Photos to iCloud on Windows
+# Migrating from Google Photos to iCloud on Windows or macOS
 A personal guide and some powershell scripts I used.
 Use at your own risk, I do not provide any guarantees. Hopefully this helps someone.
+These scripts now prompt for directory paths so they work on both Windows and macOS.
 
-This guide outlines the process of migrating your photo library from Google Photos to iCloud using a series of PowerShell scripts on Windows 11, alongside other tools such as ExifTool, FFmpeg, and Google Photos Migrate EXIF Tool. These scripts are designed for use with PowerShell version 7 or higher, leveraging parallel processing for efficiency.
+This guide outlines the process of migrating your photo library from Google Photos to iCloud using a series of PowerShell scripts on Windows 11 or macOS, alongside other tools such as ExifTool, FFmpeg, and Google Photos Migrate EXIF Tool. These scripts are designed for use with PowerShell version 7 or higher, leveraging parallel processing for efficiency.
 
 ## Requirements
 - PowerShell version 7 or higher
@@ -29,7 +30,7 @@ You should use this script in both your output folder as well as your error fold
 ### 4. Eliminate Duplicates (optional)
 Use the [Czkawka](https://github.com/qarmin/czkawka) tool to identify duplicated images within the output and error folder.
 
-Also, connect iPhone to Windows 11 via good cable for good transfer speeds, then open the Windows Photos App, and import all media from the iPhone. This way we can use [Czkawka](https://github.com/qarmin/czkawka) tool to identify which media in output/error are already in the iPhone local storage, and thus removing or moving out of the transfer this duplicated photos.
+Also, connect iPhone to your computer via good cable for good transfer speeds, then open the Windows Photos App, and import all media from the iPhone. This way we can use [Czkawka](https://github.com/qarmin/czkawka) tool to identify which media in output/error are already in the iPhone local storage, and thus removing or moving out of the transfer this duplicated photos.
 
 In my case I choose to non-destructive just move them out into another windows folder, for that purpose save the list of duplicates media filenames in a TXT file and name it: `2-filesToMove.txt`
 
